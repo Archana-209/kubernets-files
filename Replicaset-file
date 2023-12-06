@@ -1,0 +1,18 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demoreplcaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        name: nginx
+    spec:
+      containers:
+        - name: demo_cont1
+          image: nginx:latest
