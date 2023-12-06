@@ -1,0 +1,16 @@
+---
+apiVerision: v1
+kind: Pod
+metadata:
+  name: pod-pvc
+spec:
+  containers:
+    - name: diy_cont
+      image: nginx
+      volumemounts: 
+    - mountPath: /var/www/html
+      name: mypv
+  volumes:
+    - name: mypv
+      persistentVolumeClaim:
+        claimName: testpvc
