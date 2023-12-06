@@ -1,0 +1,17 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: redis-ds
+spec:
+  template:
+    metadata: null
+    labels:
+      app: redis
+    spec:
+      containers:
+        - name: redis_cont
+          image: redis:latest
+  selector:
+    matchLabels:
+      app: redis
