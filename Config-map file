@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: testpod
+spec:
+  containers:
+    - name: diy_container
+      image: nginx
+      env:
+        - name: log-level
+          valuFrom:
+            configMapKeyRef:
+              name: logconfig
+              key: log_level
